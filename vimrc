@@ -5,9 +5,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'tomasr/molokai'
+"Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'Lokaltog/vim-powerline'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'Yggdroot/indentLine'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tell-k/vim-autopep8'
@@ -24,8 +24,6 @@ set showtabline=0
 "设置字体"
 set guifont=Monaco:h13         
 syntax on   "开启语法高亮"
-let g:solarized_termcolors=256  "solarized主题设置在终端下的设置"
-colorscheme molokai
 set nowrap  "设置不折行"
 set fileformat=unix "设置以unix的格式保存文件"
 set cindent     "设置C样式的缩进格式"
@@ -54,6 +52,14 @@ set novisualbell
 set t_vb=  
 set tm=500   
 
+set background=dark
+set t_co=256
+let g:solarized_termcolors=256
+"let g:molokai_original=1
+"let g:rehash256=1
+color solarized
+"color molokai
+
 " NERDTree
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -67,5 +73,6 @@ let g:indentLine_enabled = 1
 "autopep8设置"
 let g:autopep8_disable_show_diff=1
 
-"nerdcommenter""
+"nerdcommenter
 map <F4> <leader>ci <CR>
+
